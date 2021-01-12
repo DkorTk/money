@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>我是 dk1号</h1>
+    <button>呼叫</button>
+</body>
+<script>
+
+    //测试本地/dk1路由
+    let btn = document.querySelector('button');
+    btn.onclick = function() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('post', '/dk1', true);
+        xhr.onload = function() {
+            console.log(xhr.responseText);
+        }
+        xhr.send(`{"dk2": "我是dk2号"}`);
+    }
+
+    
+</script>
+</html>
